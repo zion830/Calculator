@@ -1,7 +1,8 @@
-package com.boostcourse.calculator
+package com.boostcourse.calculator.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.boostcourse.calculator.R
 
 class MainActivity : AppCompatActivity() {
 

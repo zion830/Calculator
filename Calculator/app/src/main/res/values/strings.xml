@@ -2,13 +2,14 @@
     <string name="app_name">계산기</string>
     <string name="clear">C</string>
     <string name="bracket">( )</string>
-    <string name="remains">%</string>
+    <string name="percent">%</string>
     <string name="div">÷</string>
     <string name="multi">X</string>
     <string name="add">+</string>
     <string name="sub">-</string>
     <string name="result">=</string>
     <string name="plus_minus">±</string>
+    <string name="dot">.</string>
 
     <string name="err_over">15자리까지 입력할 수 있습니다.</string>
     <string name="err_div_zero">0으로 나눌 수 없습니다.</string>
