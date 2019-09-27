@@ -21,57 +21,8 @@ class MainActivity : AppCompatActivity(), CalculatorCallback {
     }
 
     private fun initView() {
-
         getNumberBtns().forEach {
             it.setOnClickListener { _ -> addInputValue(it.text.toString()) }
-        }
-
-        btn_plus_minus.setOnClickListener {
-            val input = tv_main_input.text.toString()
-
-            if (input.isEmpty()) {
-                showMsg("값을 입력해주세요.")
-            } else {
-                val trans = NumberFormat.stringToDouble(input) * -1
-                displayValue(NumberFormat.doubleToString(trans))
-            }
-        }
-
-        btn_clear.setOnClickListener {
-            calculator.reset()
-        }
-
-        btn_back.setOnClickListener {
-            backspaceValue()
-        }
-
-        btn_back.setOnLongClickListener {
-            displayValue("")
-            true
-        }
-
-        btn_add.setOnClickListener {
-            calculator.performOperation(ADD, tv_main_input.text.toString())
-        }
-
-        btn_sub.setOnClickListener {
-            calculator.performOperation(SUB, tv_main_input.text.toString())
-        }
-
-        btn_multi.setOnClickListener {
-            calculator.performOperation(MULTI, tv_main_input.text.toString())
-        }
-
-        btn_divide.setOnClickListener {
-            calculator.performOperation(DIVIDE, tv_main_input.text.toString())
-        }
-
-        btn_power.setOnClickListener {
-            calculator.performOperation(POWER, tv_main_input.text.toString())
-        }
-
-        btn_point.setOnClickListener {
-            addInputValue(".")
         }
 
         btn_result.setOnClickListener {
@@ -82,6 +33,17 @@ class MainActivity : AppCompatActivity(), CalculatorCallback {
                 calculator.calculate()
             }
         }
+
+        btn_plus_minus.setOnClickListener { calculator.converseSign(tv_main_input.text.toString()) }
+        btn_clear.setOnClickListener { calculator.reset() }
+        btn_back.setOnClickListener { backspaceValue() }
+        btn_back.setOnLongClickListener { displayValue(""); true }
+        btn_add.setOnClickListener { calculator.performOperation(ADD, tv_main_input.text.toString()) }
+        btn_sub.setOnClickListener { calculator.performOperation(SUB, tv_main_input.text.toString()) }
+        btn_multi.setOnClickListener { calculator.performOperation(MULTI, tv_main_input.text.toString()) }
+        btn_divide.setOnClickListener { calculator.performOperation(DIVIDE, tv_main_input.text.toString()) }
+        btn_power.setOnClickListener { calculator.performOperation(POWER, tv_main_input.text.toString()) }
+        btn_point.setOnClickListener { addInputValue(".") }
     }
 
     private fun addInputValue(letter: String) {

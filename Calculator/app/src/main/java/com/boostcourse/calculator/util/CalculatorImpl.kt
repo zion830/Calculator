@@ -50,15 +50,10 @@ class CalculatorImpl(private val callback: CalculatorCallback) : Calculator {
 
     override fun calculate() {
         when (lastOperation) {
-            ADD -> {
-                firstValue = Operation.add(firstValue, secondValue)
-            }
-            SUB -> {
-                firstValue = Operation.sub(firstValue, secondValue)
-            }
-            MULTI -> {
-                firstValue = Operation.multi(firstValue, secondValue)
-            }
+            ADD -> firstValue = Operation.add(firstValue, secondValue)
+            SUB -> firstValue = Operation.sub(firstValue, secondValue)
+            MULTI -> firstValue = Operation.multi(firstValue, secondValue)
+            POWER -> firstValue = Operation.power(firstValue, secondValue)
             DIVIDE -> {
                 val result = Operation.divide(firstValue, secondValue)
                 if (result == null) {
@@ -67,9 +62,6 @@ class CalculatorImpl(private val callback: CalculatorCallback) : Calculator {
                 } else {
                     firstValue = result
                 }
-            }
-            POWER -> {
-                firstValue = Operation.power(firstValue, secondValue)
             }
             else -> {
                 callback.showMsg("계산할 수식이 없습니다.")
