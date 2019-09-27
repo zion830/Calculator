@@ -6,13 +6,14 @@
     android:orientation="vertical"
     tools:context=".view.MainActivity">
 
-    <TextView
+    <me.grantland.widget.AutofitTextView
         android:id="@+id/tv_main_input"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@android:color/transparent"
         android:gravity="end|bottom"
         android:padding="16dp"
+        android:singleLine="true"
         android:textColor="@android:color/white"
         android:textSize="54sp" />
 
@@ -58,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/ic_backspace_24dp"
                 android:gravity="center"
-                android:paddingStart="35dp"
+                android:paddingStart="30dp"
                 android:textSize="30sp" />
         </TableRow>
 
