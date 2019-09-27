@@ -1,5 +1,7 @@
 package com.boostcourse.calculator.util
 
+import java.lang.Math.pow
+
 object Operation {
 
     fun add(baseValue: Double, secondValue: Double) = baseValue + secondValue
@@ -14,4 +16,6 @@ object Operation {
         } else {
             null
         }
+
+    fun power(baseValue: Double, secondValue: Double) = pow(baseValue, secondValue)
 }
