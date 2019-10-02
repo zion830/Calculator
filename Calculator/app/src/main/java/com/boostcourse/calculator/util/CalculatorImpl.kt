@@ -80,7 +80,7 @@ class CalculatorImpl(private val callback: CalculatorCallback) : Calculator {
     fun converseSign(value: String) {
         if (value.isEmpty()) {
             callback.showMsg("값을 입력해주세요.")
-        } else {
+        } else if (NumberFormat.stringToDouble(value) != 0.0) {
             val trans = NumberFormat.stringToDouble(value) * -1
             displayResult(NumberFormat.doubleToString(trans))
         }
